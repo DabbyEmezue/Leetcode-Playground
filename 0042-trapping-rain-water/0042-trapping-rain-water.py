@@ -7,12 +7,10 @@ class Solution:
         for i in range(len(height)):
             maxleft.append(z)
             z=max(z,height[i])
-        print(maxleft)
         z=0
         for i in range(len(height)-1,-1,-1):
             maxright.insert(0,z)
             z=max(z,height[i])
-        print(maxright)
         for i in range(len(height)):
             temp = min(maxleft[i],maxright[i])
             if temp - height[i] >0:
