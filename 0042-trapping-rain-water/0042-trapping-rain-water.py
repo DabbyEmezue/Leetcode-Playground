@@ -12,7 +12,7 @@ class Solution:
             maxright[i]=z
             z=max(z,height[i])
         for i in range(len(height)):
-            temp = min(maxleft[i],maxright[i])
-            if temp - height[i] >0:
-                ans+= temp - height[i]
+        ##    temp = min(maxleft[i],maxright[i])
+            if min(maxleft[i],maxright[i]) - height[i] >0:
+                ans+= min(maxleft[i],maxright[i]) - height[i]
         return ans
