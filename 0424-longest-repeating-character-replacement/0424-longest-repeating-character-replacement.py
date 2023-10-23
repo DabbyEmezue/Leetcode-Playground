@@ -10,10 +10,11 @@ class Solution:
             count[s[R]]+=1
             maxf=max(count.values())
             
-            if R-L+1 - maxf > k:
+            if R-L+1 - maxf <=k:
+                result = max(result,R-L+1)
+                R+=1
+            else:
                 count[s[L]]-=1
                 L+=1
-                
-            result = max(result, R - L + 1)
-            R+=1
+                R+=1
         return result
